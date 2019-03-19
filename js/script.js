@@ -104,46 +104,31 @@ let more = document.querySelector('.more'),
     overlay = document.querySelector('.overlay'),
     close = document.querySelector('.popup-close');
 
-    function showMoreInfo() {
-        for (let i = 0; i < descrBtn.length; i++) {
-            descrBtn[i].classList.add('more-splah');
-        }
+function showMoreInfo() {
+    for (let i = 0; i < descrBtn.length; i++) {
+        descrBtn[i].classList.add('more-splah');
     }
+}
 
-    showMoreInfo();
+showMoreInfo();
 
-    descrBtn.addEventListener('click', function(event) {
-        let target = event.target;
-        if (target && target.classList.contains('more-splash')) {
-            for (let i = 0; i < descrBtn.length; i++) {
-                if (target == descrBtn[i]) {
-                    showMoreInfo();
-                    break;
-                }
-            }
-        }
-    }
-
-    // descrBtn.addEventListener('click', function() {
-    //         overlay.style.display = 'block';
-    //         this.classList.add('more-splash');
-    //         document.body.style.overflow = 'hidden';
-    //     });  
-
-    // descrBtn.addEventListener('click', function() {
-    //     overlay.style.display = 'block';
-    //     this.classList.add('more-splash');
-    //     document.body.style.overflow = 'hidden';
-    // });    
-
-    more.addEventListener('click', function() {
+for (let i = 0; i < descrBtn.length; i++) {
+    descrBtn[i].addEventListener('click', function () {
         overlay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
     });
 
-    close.addEventListener('click', function() {
-        overlay.style.display = 'none';
-        more.classList.remove('more-splash');
-        document.body.style.overflow = '';
-    });
+}
+
+more.addEventListener('click', function () {
+    overlay.style.display = 'block';
+    this.classList.add('more-splash');
+    document.body.style.overflow = 'hidden';
+});
+
+close.addEventListener('click', function () {
+    overlay.style.display = 'none';
+    more.classList.remove('more-splash');
+    document.body.style.overflow = '';
+});
