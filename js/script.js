@@ -149,12 +149,11 @@ let form = document.querySelector('.main-form'),
 
     //проверка на ввод только цифр в строку с телефоном 
 
-    let inputFormNumber = document.querySelector('.popup-form__input'),
-    inp = inputFormNumber.value;
-    console.log(inp);
+    let inputFormNumber = document.querySelector('.popup-form__input');
+
 
     inputFormNumber.addEventListener = ('input', function(event) {
-        if (/\D/.inp(event.target.value)) {
+        if (/\D/.test(event.target.value)) {
             event.target.value = '';
         }
     });
