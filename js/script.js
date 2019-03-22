@@ -152,7 +152,7 @@ let form = document.querySelector('.main-form'),
     let inputFormNumber = document.querySelector('.popup-form__input');
 
 
-    inputFormNumber.addEventListener = ('input', function(event) {
+    inputFormNumber.addEventListener('input', function(event) {
         if (/\D/.test(event.target.value)) {
             event.target.value = '';
         }
