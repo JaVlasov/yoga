@@ -149,8 +149,22 @@ let form = document.querySelector('.main-form'),
 
     //проверка на ввод только цифр в строку с телефоном 
 
-    let inputFormNumber = document.querySelector('.popup-form__input');
+    let inputFormNumber = document.querySelector('.popup-form__input'),
+        contactFormNumber = document.getElementsByName('contphone')[0];
 
+        // console.log(contactFormNumber);
+
+        function validForm (event) {
+            if (/\D/.test(event.target.value)) {
+                event.target.value = '';
+            }
+        }
+
+    contactFormNumber.addEventListener('input', function (event) {
+        if (/\D/.test(event.target.value)) {
+            event.target.value = '';
+        }
+    });
 
     inputFormNumber.addEventListener('input', function(event) {
         if (/\D/.test(event.target.value)) {
