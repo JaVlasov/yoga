@@ -274,17 +274,24 @@ let slideIndex = 1,
         totalValue.innerHTML = 0;
 
     let inputConter = document.querySelectorAll('.counter-block-input');
+    console.log(inputConter);
 
 // проверка должна проверять, если введёт любой символ, который не в диапазоне [0-9] - не позволяет ввести. Почему у меня не работает? 
     for (let i = 0; i < inputConter.length; i++) {
         inputConter[i].addEventListener('input', function (event) {
-            if (/\D/g.test(event.target.value)) {
+            if (/\d/.test(event.target.value)) {
+                console.log('ok');
+            } else {
                 event.target.value = '';
             }
-        });
-    }
-
-        persons.addEventListener('change', function() {
+            if (event.target.value == 0  || event.target.value == '') {
+                total                  = 0;
+                totalValue.textContent = 0;
+              }
+            });
+          }
+          
+        persons.addEventListener('input', function() {
             personSum = +this.value;
             if (restDays.value !== '' && persons.value !== '') {
                 total = (daysSum + personSum)*4000;
@@ -293,14 +300,14 @@ let slideIndex = 1,
             }
             
 
-            if(restDays.value == '') {
+            if(restDays.value == '' && restDays.value == 0) {
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
             }
         });
 
-        restDays.addEventListener('change', function() {
+        restDays.addEventListener('input', function() {
             daysSum = +this.value;
             if (restDays.value !== '' && persons.value !== '') {
                 total = (daysSum + personSum)*4000;
@@ -308,15 +315,15 @@ let slideIndex = 1,
                 total = 0;
             }
 
-            if(persons.value == '') {
+            if(persons.value == '' || persons.value == 0 ) {
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
             }
         });
 
-        place.addEventListener('change', function() {
-            if (restDays.value == '' || persons.value == '') {
+        place.addEventListener('input', function() {
+            if (restDays.value == '' || persons.value == 0 || persons.value == '' || restDays.value == 0) {
                 totalValue.innerHTML = 0;
             } else {
                 let a = total;
