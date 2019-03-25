@@ -229,7 +229,7 @@ let slideIndex = 1,
             slideIndex = 1;
         }
         if (n < 1) {
-            slideIndex = slide.length;
+            slideIndex = slides.length;
         }
 
         slides.forEach((item) => item.style.display = 'none');
