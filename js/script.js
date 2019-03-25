@@ -278,7 +278,7 @@ let slideIndex = 1,
 // проверка должна проверять, если введёт любой символ, который не в диапазоне [0-9] - не позволяет ввести. Почему у меня не работает? 
     for (let i = 0; i < inputConter.length; i++) {
         inputConter[i].addEventListener('input', function (event) {
-            if (/^[0-9]/.test(event.target.value)) {
+            if (/\D/g.test(event.target.value)) {
                 event.target.value = '';
             }
         });
