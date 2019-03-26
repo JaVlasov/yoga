@@ -10,10 +10,10 @@ function calc() {
     totalValue.innerHTML = 0;
 
     let inputConter = document.querySelectorAll('.counter-block-input');
- 
+
 
     // проверка должна проверять, если введёт любой символ, который не в диапазоне [0-9] - не позволяет ввести. Почему у меня не работает? 
-    
+
     persons.addEventListener('change', function () {
         personSum = +this.value;
         if (restDays.value !== '' && persons.value !== '') {
@@ -69,4 +69,4 @@ function calc() {
 
 }
 
-    module.exports = calc;
+module.exports = calc;
