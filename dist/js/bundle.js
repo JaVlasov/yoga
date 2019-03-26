@@ -102,8 +102,7 @@ function calc() {
       daysSum = 0,
       total = 0;
   totalValue.innerHTML = 0;
-  var inputConter = document.querySelectorAll('.counter-block-input');
-  console.log(inputConter); // проверка должна проверять, если введёт любой символ, который не в диапазоне [0-9] - не позволяет ввести. Почему у меня не работает? 
+  var inputConter = document.querySelectorAll('.counter-block-input'); // проверка должна проверять, если введёт любой символ, который не в диапазоне [0-9] - не позволяет ввести. Почему у меня не работает? 
 
   persons.addEventListener('change', function () {
     personSum = +this.value;
@@ -183,7 +182,6 @@ function form() {
       secondForm = document.querySelector('#form'),
       input = document.getElementsByTagName('input'),
       statusMessage = document.createElement('div');
-  console.log(input);
   statusMessage.classList.add('status'); //проверка на ввод только цифр в строку с телефоном 
 
   var inputFormNumber = document.querySelectorAll('input[name="phone"]');
