@@ -27,13 +27,13 @@ function calc() {
 
     place.addEventListener('change', function () {
         cof = this.options[this.selectedIndex].value;
-        console.log(total);
-        console.log(cof);
+        // console.log(total);
+        // console.log(cof);
         if (restDays.value == '' || persons.value == 0 || persons.value == '' || restDays.value == 0) {
             totalValue.innerHTML = 0;
         } else {
             let a = total;
-            console.log(a);
+            // console.log(a);
             // console.log('a',a, ' *cof', cof);
             totalValue.innerHTML = a * cof;
         }

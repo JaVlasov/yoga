@@ -113,15 +113,14 @@ function calc() {
     changeTotal(persons);
   });
   place.addEventListener('change', function () {
-    cof = this.options[this.selectedIndex].value;
-    console.log(total);
-    console.log(cof);
+    cof = this.options[this.selectedIndex].value; // console.log(total);
+    // console.log(cof);
 
     if (restDays.value == '' || persons.value == 0 || persons.value == '' || restDays.value == 0) {
       totalValue.innerHTML = 0;
     } else {
-      var a = total;
-      console.log(a); // console.log('a',a, ' *cof', cof);
+      var a = total; // console.log(a);
+      // console.log('a',a, ' *cof', cof);
 
       totalValue.innerHTML = a * cof;
     }
